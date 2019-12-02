@@ -8,9 +8,92 @@ Chitter Challenge
 * If you have a partial solution, **still check in a partial solution**
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
-** Stories Completed **
+*Stories Completed:*
 
-Challenge:
+*Setup:*
+
+1. In order to create this application first we will make sure that we have Sinatra and Capybara installed and running.
+§ Sinatra is a Domain Specific language that quickly creates web applications in ruby. To check if it's installed on our    system or not we will run the following command in the terminal.
+
+gem list sinatra
+
+it came back with the following
+*** LOCAL GEMS ***
+sinatra (2.0.7)
+
+which means we already have sinatra installed. if its not installed then the following command can be run to install it.
+
+gem install sinatra
+
+or include it in all of the gems needed in your gem file and then on the comand line run bundle install. It will install all the gems at once.
+
+2. Now we need to set up our RSpec:
+CD to the spec folder in the project directory and on the command line run
+
+rspec --init
+
+This will create our .rspec file
+
+3. Set up Sinatra and Rack
+ In the root directory of this project now we will be creating a simple sinatra app.rb file which will act as our Controller. Now in this file include require 'sinatra/base' at the top and write your very basic program for the app to run.
+
+4. Create a file called config.ru and include the following
+
+require_relative "./app"
+run Chitter
+
+By doing the above we are basically configuring the rackup command to run the application that we will be writing in the app.rb file.
+
+5. Capybara :
+I already installed capybara in this project. I just have to inform it now that any instructions like visit('/') should be directed to my application 'Chitter'. So, I am going the include the following in my spec helper file.
+
+§§§§
+# at the top of spec/spec_helper.rb
+# Set the environment to "test"
+ENV['RACK_ENV'] = 'test'
+# Bring in the contents of the `app.rb` file
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+# Require all the testing gems
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+# Tell Capybara to talk to BookmarkManager
+Capybara.app = Chitter
+### the rest of the file ###
+§§§§
+
+6. rerun
+gem rerun helps you to make changes to your code and see the results without restarting the server.
+So, I included gem 'rerun',   '0.13.0' in my gemfile and then ran gem install rerun on the command line.
+
+Now we have set up our directory with necessary installation and files. So, now we can start building our app.
+
+*Chitter Application Building:*
+
+Step 1: Test drive the implementation of an index page.
+
+In this step  we will follow the TDD process just to make a very simple working project just as a kick off to our main app. So, we will execute two simple things in this steps
+    1. Write a failing feature tests
+    2. Pass that test in the most simplest way possible
+
+Step 2: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*Challenge:*
 -------
 
 As usual please start by forking this repo.
