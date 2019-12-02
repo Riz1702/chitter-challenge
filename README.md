@@ -70,13 +70,34 @@ Now we have set up our directory with necessary installation and files. So, now 
 
 *Chitter Application Building:*
 
-Step 1: Test drive the implementation of an index page.
+Test drive the implementation of an index page.
 
 In this step  we will follow the TDD process just to make a very simple working project just as a kick off to our main app. So, we will execute two simple things in this steps
     1. Write a failing feature tests
+    We will write a simple failing test to view the home page of the Chitter app.
     2. Pass that test in the most simplest way possible
 
-Step 2: 
+
+
+``` Implementation of User Story 1
+
+`As a Maker
+So that I can let people know what I am doing  
+I want to post a message (peep) to chitter
+
+>>Wrote a simple test and then updated app.rb to include a /homepage route where the user will come to visit the Chitter website. Also created view index.erb with form functionality so that he can add his peep to the website.
+
+>> Now will create a database so that this peep could be stored in it and can be made available on the website.
+
+    DATABASE Setup
+    1. Created a directory for database setup called db and a subdirectory in it called migrations.
+    2. Created a file called posting_peeps.sql and will be saving all the queries that will be used int his project.
+    3. Connected to psql>created a database>created a db table called "peeps" which has three columns id,username and peep.
+    4. Now we will install the gem pg. It is a gem that allows connection to and querying of Postgresql.
+    >Pg allows us to connect to PostgreSQL
+    >Execute SQL on that database, directly from Ruby.
+    So, added it to the gemfile and did bundle install.
+    4. Now we will write a rspec test so that we could read data from our database.
 
 
 
@@ -90,6 +111,8 @@ Step 2:
 
 
 
+```
+STRAIGHT UP
 
 
 

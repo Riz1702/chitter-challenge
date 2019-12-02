@@ -5,10 +5,9 @@ gem 'rubocop', '0.71.0'
 
 # gem "rails"
 
-
+ gem 'pg'
  gem 'sinatra'
  gem 'capybara'
- gem 'capybara/rspec'
  gem 'rerun',   '0.13.0'
  group :test do
   gem 'rspec'
