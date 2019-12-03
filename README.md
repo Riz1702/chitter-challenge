@@ -9,6 +9,7 @@ Chitter Challenge
 * You must submit a pull request to this repo with your code by 9am Monday morning
 
 *Stories Completed:*
+User Story 1 completed
 
 *Setup:*
 
@@ -92,12 +93,15 @@ I want to post a message (peep) to chitter
     DATABASE Setup
     1. Created a directory for database setup called db and a subdirectory in it called migrations.
     2. Created a file called posting_peeps.sql and will be saving all the queries that will be used int his project.
-    3. Connected to psql>created a database>created a db table called "peeps" which has three columns id,username and peep.
+    3. Connected to psql>created a development database>created a db table called "peeps" which has three columns id,username and peep.
+    4. Created a test database for testing environment.
+    5. Created the Environment variable so that it could tell the application to use either the chitterdb database or chitterdb_test database depending on if we are in dev or test environment.
     4. Now we will install the gem pg. It is a gem that allows connection to and querying of Postgresql.
     >Pg allows us to connect to PostgreSQL
     >Execute SQL on that database, directly from Ruby.
     So, added it to the gemfile and did bundle install.
     4. Now we will write a rspec test so that we could read data from our database.
+    5.
 
 
 

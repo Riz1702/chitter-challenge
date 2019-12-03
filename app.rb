@@ -7,12 +7,18 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
- post '/message' do
-   @msg = params[:msg]
-   redirect '/play'
+  post '/message' do
+    @msg = params[:msg]
+    #session[:messages] = "This is my message :  #{@msg}"
+    session[:msg] = "This is my message :  #{@msg}"
+    redirect '/show'
+  end
 
- end
+  get '/show' do
+    @msg  = session[:msg]
+    
+  end
 
- 
+
   run! if app_file == $0
 end
